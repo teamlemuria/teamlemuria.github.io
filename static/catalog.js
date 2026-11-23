@@ -3,7 +3,7 @@
   var PAGE = 48;
   var all = window.PLANTS || [];
   var $ = function (id) { return document.getElementById(id); };
-  var q = $("q"), category = $("category"), subtype = $("subtype"), sun = $("sun"), trait = $("trait"), instock = $("instock");
+  var q = $("q"), category = $("category"), subtype = $("subtype"), sun = $("sun"), native = $("native"), instock = $("instock");
   var results = $("results"), count = $("count"), more = $("more");
   var matches = [], shown = 0, allstars = $("allstars"), view = "grid";
   try { if (localStorage.getItem("lemuria-view") === "list") view = "list"; } catch(e) {}
@@ -64,7 +64,7 @@
       if (category.value && p.c !== category.value) return false;
       if (subtype.value && p.sub !== subtype.value) return false;
       if (sun.value && p.u.indexOf(sun.value) < 0) return false;
-      if (trait.value && p.t.indexOf(trait.value) < 0) return false;
+      if (native.checked && !p.cn) return false;
       if (instock.checked && p.k !== "ok") return false;
       if (allstars.checked && !p.a) return false;
       var haystack = p.h + " " + (p.kw || []).join(" ");
@@ -79,7 +79,7 @@
     if (category.value) params.set("category", category.value);
     if (subtype.value) params.set("subtype", subtype.value);
     if (sun.value) params.set("sun", sun.value);
-    if (trait.value) params.set("trait", trait.value);
+    if (native.checked) params.set("native", "1");
     if (instock.checked) params.set("instock", "1");
     if (allstars.checked) params.set("allstars", "1");
     var qs = params.toString();
@@ -91,7 +91,7 @@
   category.value = p.get("category") || "";
   var requestedSubtype = p.get("subtype") || "";
   sun.value = p.get("sun") || "";
-  trait.value = p.get("trait") || "";
+  native.checked = p.get("native") === "1" || p.get("trait") === "CA Native";
   instock.checked = p.get("instock") === "1";
   allstars.checked = p.get("allstars") === "1";
 
@@ -104,10 +104,10 @@
   category.addEventListener("change", function(){ refreshSubtypes(); apply(); });
   refreshSubtypes();
   if (Array.from(subtype.options).some(function(o){return o.value === requestedSubtype;})) subtype.value = requestedSubtype;
-  [q, subtype, sun, trait, instock, allstars].forEach(function (el) {
+  [q, subtype, sun, native, instock, allstars].forEach(function (el) {
     el.addEventListener(el === q ? "input" : "change", apply);
   });
-  $("header-search").addEventListener("submit", function(e){ e.preventDefault(); apply(); });
+  $("filters").addEventListener("submit", function(e){ e.preventDefault(); apply(); });
   $("grid-view").addEventListener("click", function(){setView("grid");});
   $("list-view").addEventListener("click", function(){setView("list");});
   setView(view);

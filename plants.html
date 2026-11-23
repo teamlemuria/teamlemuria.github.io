@@ -10,6 +10,8 @@
 <body>
 
 
+<div class="announcement"><div class="wrap">Welcome to Lemuria Nursery! Check back here for seasonal news and announcements.</div></div>
+
 <header class="site-header">
   <div class="wrap topbar">
     <a class="brand" href="index.html">
@@ -22,10 +24,6 @@
       <a href="about.html" class="">About</a>
       <a href="visit.html" class="">Visit</a>
     </nav>
-    <form class="header-search" action="plants.html" method="get" role="search" id="header-search">
-      <input type="search" name="q" id="q" placeholder="Search plants…" aria-label="Search plants" autocomplete="off">
-      <button class="button" type="submit">Search</button>
-    </form>
   </div>
 </header>
 
@@ -36,6 +34,7 @@
 
   <h2>Browse by Plant Category</h2>
   <form class="filters" id="filters" onsubmit="return false">
+    <input type="search" id="q" name="q" placeholder="Search plants…" aria-label="Search plants" autocomplete="off">
     <div class="category-controls"><label>Plant group<select id="category" aria-label="Plant supertype">
       <option value="">All plant groups</option>
       <option>Crape Myrtles</option><option>Edible Fruits &amp; Nuts</option><option>Grasses</option><option>Groundcovers</option><option>Japanese Maples</option><option>Perennials</option><option>Roses</option><option>Shrubs</option><option>Succulents</option><option>Trees</option><option>Vines</option>
@@ -47,11 +46,7 @@
       <option value="P">Part sun / part shade</option>
       <option value="S">Shade</option>
     </select>
-    <select id="trait" aria-label="Special traits">
-      <option value="">Any traits</option>
-      <option>CA Native</option>
-      <option>Drought Tolerant</option>
-    </select>
+    <label class="check"><input type="checkbox" id="native"> CA Native</label>
     <label class="check"><input type="checkbox" id="allstars"> UC Davis All-Stars</label>
     <label class="check"><input type="checkbox" id="instock"> In stock only</label>
   </form>
