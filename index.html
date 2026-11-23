@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
+
+
 <header class="site-header">
   <div class="wrap topbar">
     <a class="brand" href="index.html">
@@ -16,10 +18,14 @@
     </a>
     <nav class="main-nav" aria-label="Main">
       <a href="index.html" class="active">Home</a>
-      <a href="plants.html" class="">Plants</a>
+      <a href="plants.html" class="">Browse Plants</a>
       <a href="about.html" class="">About</a>
       <a href="visit.html" class="">Visit</a>
     </nav>
+    <form class="header-search" action="plants.html" method="get" role="search" id="header-search">
+      <input type="search" name="q" id="q" placeholder="Search plants…" aria-label="Search plants" autocomplete="off">
+      <button class="button" type="submit">Search</button>
+    </form>
   </div>
 </header>
 
@@ -30,20 +36,17 @@
       <h1>Lemuria Nursery</h1>
       <p class="lead">Family-owned since 1939</p>
       <p class="hero-intro">Trees, shrubs, perennials, roses and edibles, grown and chosen for our local climate. Browse what we have in stock, then come see it in person.</p>
-      <form class="hero-search" action="plants.html" method="get" role="search">
-        <input type="search" name="q" placeholder="Search 871 plants, e.g. salvia, maple, drought tolerant..." aria-label="Search plants" autocomplete="off">
-        <button type="submit" class="button primary">Search</button>
-      </form>
+
       <p class="hero-actions">
-        <a class="button" href="plants.html">Browse all plants</a>
+        <a class="button browse-primary" href="#categories">Browse Plants</a>
         <a class="button" href="visit.html">Hours &amp; directions</a>
       </p>
     </div>
   </div>
 </section>
 
-<section class="wrap section">
-  <h2>Shop by type</h2>
+<section class="wrap section" id="categories">
+  <h2>Browse by Plant Category</h2>
   <div class="tiles">
     
     <a class="tile" href="plants.html?category=Crape%20Myrtles"><strong>Crape Myrtles</strong><span>11 plants</span></a>
@@ -58,11 +61,11 @@
     
     <a class="tile" href="plants.html?category=Perennials"><strong>Perennials</strong><span>173 plants</span></a>
     
-    <a class="tile" href="plants.html?category=Roses"><strong>Roses</strong><span>83 plants</span></a>
+    <a class="tile" href="plants.html?category=Roses"><strong>Roses</strong><span>101 plants</span></a>
     
-    <a class="tile" href="plants.html?category=Shrubs"><strong>Shrubs</strong><span>186 plants</span></a>
+    <a class="tile" href="plants.html?category=Shrubs"><strong>Shrubs</strong><span>188 plants</span></a>
     
-    <a class="tile" href="plants.html?category=Succulents"><strong>Succulents</strong><span>86 plants</span></a>
+    <a class="tile" href="plants.html?category=Succulents"><strong>Succulents</strong><span>87 plants</span></a>
     
     <a class="tile" href="plants.html?category=Trees"><strong>Trees</strong><span>150 plants</span></a>
     
@@ -71,6 +74,10 @@
   </div>
 </section>
 
+<section class="wrap section collections">
+  <h2>Special Collections</h2>
+  <a class="tile collection-tile" href="plants.html?allstars=1"><strong>UC Davis Arboretum All-Stars</strong><span>0 plants</span></a>
+</section>
 
 <section class="wrap section">
   <h2>Fresh from the nursery</h2>

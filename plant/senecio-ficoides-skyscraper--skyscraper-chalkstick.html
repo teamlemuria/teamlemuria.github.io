@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
+
+
 <header class="site-header">
   <div class="wrap topbar">
     <a class="brand" href="../index.html">
@@ -16,10 +18,14 @@
     </a>
     <nav class="main-nav" aria-label="Main">
       <a href="../index.html" class="">Home</a>
-      <a href="../plants.html" class="active">Plants</a>
+      <a href="../plants.html" class="active">Browse Plants</a>
       <a href="../about.html" class="">About</a>
       <a href="../visit.html" class="">Visit</a>
     </nav>
+    <form class="header-search" action="../plants.html" method="get" role="search" id="header-search">
+      <input type="search" name="q" id="q" placeholder="Search plants…" aria-label="Search plants" autocomplete="off">
+      <button class="button" type="submit">Search</button>
+    </form>
   </div>
 </header>
 
@@ -40,6 +46,7 @@
       <p class="botanical big"><i>Senecio ficoides</i> &#39;Skyscraper&#39;</p>
       <p class="muted plant-updated">Catalog record updated: 2026-10-30</p>
       <p class="tags"><span class="tag">Drought Tolerant</span></p>
+      
       <dl class="facts">
         <div><dt>Sun</dt><dd>Full-Part Sun</dd></div>
         <div><dt>Mature size (H &times; W)</dt><dd>4&#39;X2&#39;</dd></div>

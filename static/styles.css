@@ -119,3 +119,32 @@ th { font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(
   .hero-search { flex-direction:column; }
   .hero-overlay { padding:48px 0; }
 }
+
+/* Category-first browsing and compact shared search */
+.header-search { display:flex; gap:5px; align-items:center; flex:0 1 245px; }
+.header-search input { width:100%; min-width:0; padding:8px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+.header-search .button { padding:7px 10px; font-size:.85rem; }
+.announcement { background:var(--green-900); color:white; text-align:center; padding:9px 0; }
+.announcement a { color:white; margin-left:8px; }
+.hero .browse-primary { background:white; color:var(--green-900); }
+.hero .browse-primary:hover { background:var(--green-100); }
+.tiles { grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); }
+.tile { padding:26px; min-height:110px; justify-content:center; }
+.collection-tile { background:var(--green-100); min-height:85px; }
+.collections { padding-top:0; }
+.category-controls { display:flex; flex:1 1 100%; gap:12px; flex-wrap:wrap; padding-bottom:12px; border-bottom:1px solid var(--line); }
+.category-controls label { flex:1 1 200px; font-weight:600; }
+.category-controls select { display:block; width:100%; margin-top:4px; border-color:var(--green-600); }
+.results-toolbar { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.view-toggle { display:flex; gap:4px; }
+.view-toggle button { font:inherit; padding:6px 14px; border:1px solid var(--green-700); border-radius:6px; background:white; color:var(--green-700); cursor:pointer; }
+.view-toggle button[aria-pressed=true] { background:var(--green-700); color:white; }
+.plant-list { background:white; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+.plant-list:empty { display:none; }
+.plant-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(90px,140px) auto; align-items:center; gap:12px; padding:10px 14px; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
+.plant-row:last-child { border-bottom:0; }
+.plant-row:hover { background:var(--green-50); }
+.plant-row strong { color:var(--green-900); }
+.plant-row small { display:block; color:var(--muted); }
+.plant-row .badge { justify-self:start; }
+@media(max-width:760px) { .header-search { flex:1 1 100%; } .plant-row { grid-template-columns:minmax(0,1fr) auto; gap:5px 10px; } .plant-row > span:first-child { grid-column:1/-1; } .main-nav a { padding:7px 9px; } }
